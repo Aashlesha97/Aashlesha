@@ -7,9 +7,9 @@ library(readxl)
 mydata <- read_excel("//ug.kth.se/dfs/home/a/a/aacv/appdata/xp.V2/Desktop/Hen2.xlsx")
 View(mydata)
 
-#convert the virus column in the excel to time series from 2020. 
-#The frequency is set at 52, as the data is presented in weekly format
-tsvirus <- ts(mydata2$`virus `, frequency = 52, start=c(2020))
+#convert the virus column in the excel to time series from week 25. 
+#The frequency is set at 7, as the data is presented in every 1/7th interval
+tsvirus <- ts(mydata2$`virus `, frequency = 7, start=c(25))
 
 #plot the time series data using the autoplot function
 autoplot(tsvirus)
