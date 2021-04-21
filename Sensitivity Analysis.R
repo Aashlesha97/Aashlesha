@@ -130,8 +130,8 @@ plot(results$ggplot)
 
 polymodel <- Book1$output_par
 predictors <- select(Book1 , Dep_var1 , Dep_var2)
-model_1 <- lm (output ~ poly(flowrate , 3, raw = TRUE) *poly(PMMoV , 3, raw = TRUE) , data = Book1)
+model_1 <- lm (output ~ poly(Dep_var1, 3, raw = TRUE) *poly(Dep_var2, 3, raw = TRUE) , data = Book1)
 summary(model_1)
 results_1 <- sensitivityAnalysis(model_1 , polymodel , predictors , level = 0.90 , predictionType = "prediction", targetPrediction = "raw")
-plot(results$ggplot)
+plot(results_1$ggplot)
 results$variableMeans
