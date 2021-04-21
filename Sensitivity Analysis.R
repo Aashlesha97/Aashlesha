@@ -120,7 +120,7 @@ View(Book1)
 
 #create a linear model for the data
 
-model <- lm( covid ~ flowrate , data = Book1)
+model <- lm( output ~ Dep_var1 + Dep_var2, data = Book1)
 summary(model)
 results <- sensitivityAnalysis(model, level = .90, predictionType = "prediction", targetPrediction = "raw")
 plot(results$ggplot)
