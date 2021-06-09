@@ -2,7 +2,7 @@
 view(mydata)
 
 #the corr function will correlate the columns present in the excel file
-corr(mydata, use = "pairwise.complete.obs")
+cor(mydata, use = "pairwise.complete.obs")
 
  #the correlation information is stored in the object M
 M <- cor(mydata, use = "pairwise.complete.obs")
